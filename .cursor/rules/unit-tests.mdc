@@ -1,0 +1,19 @@
+---
+description: Apply this rule whenever generating unit tests for plugins inside the workspaces directory. It will generate AND/OR update <file>.test.ts files. 
+alwaysApply: false
+---
+
+- ALWAYS use `msw` (@web https://github.com/mswjs/msw) to mock service requests (any instances of `fetch` or `XMLHTTPRequest`). Refer to examples in @.cursor/rules/msw/*.mdc
+- To identify the type of plugin a package is, search for the value of the `role` field in the `workspaces/<workspace>/plugin/<package>/package.json` of the package in the specified workspace.
+- BACKEND Plugins packages are identified by the following `package.json` `role` field values:
+  - node-library
+  - backend-plugin
+  - backend-plugin-module
+- FRONTEND Plugins packages are identified by the following `package.json` `role` field values:
+  - web-library
+  - frontend-plugin
+  - frontend-plugin-module
+- COMMON packages are identified by the `common-library` role in `package.json`:
+
+- Use `@backstage/backend-test-utils` when possible for backstage BACKEND plugins. Refer to @.cursor/rules/backend/*.mdc for more details
+- Use `@backstage/test-utils` when possible for backstage FRONTEND plugins. Refer to @.cursor/rules/frontend/*.mdc for more details

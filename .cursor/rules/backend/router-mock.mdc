@@ -1,0 +1,5 @@
+---
+description: Apply this rule whenever generating unit tests for BACKEND plugins inside the workspaces directory. BACKEND plugins are identified by the `backend-plugin`, `node-library` and `backend-plugin-module` `roles` in their `package.json`
+alwaysApply: false
+---
+
